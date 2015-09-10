@@ -24,9 +24,13 @@ def containsPoint(someList, somePoint):
 			c = -((a * aTuple[0][0]) + (b * aTuple[0][1]))
 			d = (a * somePoint[0]) + (b * somePoint[1]) + c
 			if d < 0:
+				print "edge " + str(i) + " didn't pass the test"
 				return -1
 			else:
+				print "edge " + str(i) + " passed the test"
+				i = i+1
 				continue
+		print "exited the foor loop with i = " + str(i)
 		return 1
 
 # simple function that determines if current location
@@ -34,6 +38,8 @@ def containsPoint(someList, somePoint):
 # modify it to suit your needs
 def getHood(latitude, longitude):
 	for hood in hoodList:
+		print ""
+		print hood.name
 		if containsPoint(hood.tupleList, (latitude, longitude)) > 0:
 			theHood = hood.name
 			print theHood # this is the name of the neighborhood the user is in
